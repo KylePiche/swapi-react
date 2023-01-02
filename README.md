@@ -7,3 +7,19 @@
 3. Copy the ".env example" file in both folders, rename the copy to ".env"
 4. Run the backend with the command: node index.js
 5. Run the frontend using the following command: npm start
+
+## What was used
+
+Backend: 
+- NodeJS
+- Express
+- CORS
+- AXIOS
+- dotenv
+
+Frontend:
+- React
+- Axios
+- Formik
+- dotenv
+- Yup
