@@ -29,7 +29,7 @@ export default function People() {
         isLoading={isLoading}
         setListPage={setListPage}
       />
-
+        {listOfPeople && <p>{listOfPeople.count} results found:</p>}
       {listOfPeople &&
         listOfPeople.results.map((value) => {
           return <PeopleCard value={value} key={value.name} />;

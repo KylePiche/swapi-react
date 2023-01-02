@@ -26,6 +26,7 @@ export default function Planet() {
         isLoading={isLoading}
         setListPage={setListPage}
       />
+      {listOfPlanet && <p>{listOfPlanet.count} results found:</p>}
       {listOfPlanet &&
         listOfPlanet.results.map((value) => {
           return <PlanetCard value={value} key={value.name} />;

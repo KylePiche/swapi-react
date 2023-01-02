@@ -24,7 +24,7 @@ function Search() {
     name: "",
   };
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("You must enter a name"),
+    name: Yup.string().required("You must enter a name").matches(/^[a-zA-Z0-9]+$/, "Only letters and numbers are allowed"),
   });
   const onSubmit = (data) => {
     console.log(data);
@@ -49,6 +49,7 @@ function Search() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
+      {({dirty, isValid})=>(
         <Form>
           <label>Name:</label>
 
@@ -58,7 +59,7 @@ function Search() {
             name="name"
             placeholder="Enter a name here"
           ></Field>
-          <button type="submit">Search</button>
+          <button type="submit" disabled={!isValid && dirty}>Search</button>
           <br />
           <ErrorMessage
             name="name"
@@ -66,6 +67,8 @@ function Search() {
             className="search--error"
           />
         </Form>
+      )}
+        
       </Formik>
       {listOfPeople && <p>{listOfPeople.count} results found:</p>}
       {listOfPeople && (

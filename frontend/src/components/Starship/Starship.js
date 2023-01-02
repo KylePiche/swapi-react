@@ -26,6 +26,7 @@ export default function Starship() {
         isLoading={isLoading}
         setListPage={setListPage}
       />
+      {listOfStarship && <p>{listOfStarship.count} results found:</p>}
         {listOfStarship &&
           listOfStarship.results.map((value) => {
             return <StarshipCard value={value} key={value.name}/>;
