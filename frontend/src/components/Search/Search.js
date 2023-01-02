@@ -32,7 +32,7 @@ function Search() {
     setListPage(1);
     axios
       .post(
-        `http://localhost:3000/people/?page=${listPage}`,
+        `${process.env.REACT_APP_API_URL}/people/?page=${listPage}`,
         data
       )
       .then((response) => {
